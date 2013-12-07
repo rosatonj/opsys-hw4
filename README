@@ -1,0 +1,23 @@
+CS444 hw4 supplied files
+Note: start from these sources for either project.  They have
+been edited from the hw3.soln files is a few ways.  To find out
+exactly how, do a directory diff (diff $cs444/hw3.soln $cs444/hw4).
+
+uprog[123].c: old uprog*.c 
+testmutex[123].c: user program testing simple mutex
+testmutex.sh: for running testmutex.lnx under mtip
+testmutex-provided.out: output of "testmutex.sh 6" showing
+  lack of mutex
+prodcons[123].c: user program using semaphores for producer-consumer
+prodcons.sh: for running prodcons.lnx under mtip
+prodcons-provided.out: output of "prodcons.sh 6" showing
+  producer outrunning consumer and failing to enqueue items
+
+makefile: set up for build of these programs (make U=testmutex), 
+  but lack of semaphore syscalls means they don't work properly
+
+Changes from hw3.soln:
+debuglog.c: reimplemented to be more robust in cases of data corruption
+makefile: entries for new files
+
+

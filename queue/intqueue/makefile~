@@ -1,0 +1,16 @@
+#  build queue package and its testbed
+
+CC = gcc
+CFLAGS = -g -Wall -Wno-implicit -Wshadow 
+
+all: testqueue
+
+intqueue.o: intqueue.h intqueue.c
+testqueue.o: intqueue.h testqueue.c
+
+testqueue: intqueue.o testqueue.o
+	$(CC) $(CFLAGS)  -o testqueue testqueue.o intqueue.o 
+
+clean:
+	 rm -f  *.o testqueue
+
